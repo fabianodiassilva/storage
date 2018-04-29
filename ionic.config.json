@@ -1,0 +1,8 @@
+{
+  "name": "exerc_20180424",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
