@@ -1,0 +1,37 @@
+<ion-header id="cabecalho">
+
+  <ion-navbar>
+    <ion-title>Digite o seu PIN</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear (click)="fechaModal()">
+        <ion-icon name="md-close-circle">
+        </ion-icon>
+      </button> 
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="conteudo">
+
+  <form [formGroup]="FormPin" (ngSubmit)="salvarPIN()">
+      
+    <ion-list>
+
+        <ion-item>
+          <ion-label floating>PIN</ion-label>
+          <ion-input type="text" value="" formControlName="pin"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines *ngIf="FormPin.get('pin').errors && FormPin.get('pin').dirty">
+            <p *ngIf="FormPin.get('pin').hasError('required')">Campo Obrigatório</p>      
+        </ion-item>
+      
+      </ion-list>
+
+      <button ion-button type="submit" full [disabled]="FormPin.invalid">Salvar</button>
+
+</form>
+
+</ion-content>
